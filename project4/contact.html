@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Metadata -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Montgomery County Recreation</title>
+  <link rel="stylesheet" href="/css/p4style.css">
+  <link rel="icon" href="/images/moco.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/images/moco.ico" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/659afb5dd0.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <meta name="description"
+    content="Get in touch with Montgomery County Recreation for inquiries on activities, facilities, memberships, and more. Customer service and public information details available.">
+  <meta name="keywords"
+    content="Montgomery County Recreation, Contact, Customer Service, Activities, Facilities, Memberships, Public Information, Maryland Recreation, Montgomery County MD">
+</head>
+
+<body class="contact-page">
+  <!-- Header | Logo, Nav, Search -->
+  <header>
+    <div class="header-footer-container">
+      <nav>
+        <div class="logo">
+          <a href="/project4/index.html">
+            <img class="logo-img" src="/images/logo.png" alt="Montgomery County Recreation Logo">
+          </a>
+        </div>
+        <ul>
+          <!-- Dropdown for Activities -->
+          <li class="nav-item dropdown">
+            <a href="#" class="dropdown-toggle">Activities</a>
+            <div class="dropdown-menu">
+              <a href="/project4/aquatics.html">Aquatics</a>
+              <a href="/project4/camps.html">Camps</a>
+              <a href="/project4/classes.html">Classes & Programs</a>
+              <a href="/project4/seniors.html">Senior Programs</a>
+              <a href="/project4/sports.html">Sports</a>
+              <a href="/project4/youth.html">Youth Programs</a>
+            </div>
+          </li>
+
+          <!-- Direct link for Facilities -->
+          <li class="nav-item"><a href="/project4/facilities.html">Facilities</a></li>
+
+          <!-- Direct link for Memberships -->
+          <li class="nav-item"><a href="/project4/memberships.html">Memberships</a></li>
+
+          <!-- Dropdown for Contact -->
+          <li class="nav-item dropdown">
+            <a href="#" class="dropdown-toggle">Contact</a>
+            <div class="dropdown-menu">
+              <a href="/project4/about.html">About Us</a>
+              <a href="/project4/contact.html">Contact Us</a>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Google Custom Search Box -->
+        <div class="gcse-search"></div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main | Hero, Breadcrumbs, Article, Aside -->
+  <main class="main-content">
+    <div class="hero"></div>
+
+    <!-- Breadcrumbs -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/project4/index.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+      </ol>
+    </nav>
+
+    <div class="content-layout">
+      <section class="main-article">
+        <h1>Contact Us</h1>
+        <form action="recreation.customerservice@montgomerycountymd.gov" method="post" enctype="text/plain">
+          <fieldset>
+            <legend>Contact Form</legend>
+
+            <!-- Text Input -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" tabindex="1">
+
+            <!-- Textarea -->
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Enter your message" tabindex="2"></textarea>
+
+            <!-- Select List -->
+            <label for="service">Service:</label>
+            <select id="service" name="service" tabindex="3">
+              <option value="registration">Registration</option>
+              <option value="membership">Membership</option>
+              <option value="general">General Inquiry</option>
+            </select>
+
+            <!-- Checkboxes -->
+            <fieldset>
+              <legend>I am a...</legend>
+              <label><input type="checkbox" name="interest" value="parent" tabindex="4">
+                Parent</label>
+              <label><input type="checkbox" name="interest" value="student" tabindex="5">
+                Student</label>
+              <label><input type="checkbox" name="interest" value="community_member" tabindex="6">
+                Community Member</label>
+            </fieldset>
+
+            <!-- Radio Buttons -->
+            <fieldset>
+              <legend>Preferred Contact Method</legend>
+              <label><input type="radio" name="contact_method" value="email" tabindex="7">
+                Email</label>
+              <label><input type="radio" name="contact_method" value="phone" tabindex="8">
+                Phone</label>
+            </fieldset>
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit" tabindex="9">
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- Aside 1 -->
+      <aside class="sidebar">
+        <div class="aside-box">
+          <h2>Contact</h2>
+          <p>
+            <strong>Customer service</strong><br>
+            <i class="fa-solid fa-phone fa-xs"></i>240-777-6840
+            <br>
+            <i class="fa-solid fa-envelope-open-text fa-xs"></i><a
+              href="mailto:recreation.customerservice@montgomerycountymd.gov"
+              class="email-link">recreation.customerservice@montgomerycountymd.gov
+            </a>
+            <br>
+            <i class="fa-regular fa-clock fa-xs"></i>Monday - Friday, 8:30AM -
+            4:30PM
+          </p>
+        </div>
+
+        <!-- Aside 2 -->
+        <div class="aside-box">
+          <h2>Our Services</h2>
+          <ul>
+            <li>Registrations</li>
+            <li>Withdrawals & refund requests</li>
+            <li>Financial aid information & application</li>
+            <li>Membership Sales</li>
+          </ul>
+        </div>
+
+        <!-- Aside 3 -->
+        <div class="aside-box">
+          <h2>Maryland Public Information Act</h2>
+          <p>
+            If you wish to request any public records maintained by Montgomery
+            County Recreation, please send that request to:
+            <br>
+            <strong>Monika Hammer</strong>
+            <br>
+            <i class="fa-solid fa-phone fa-xs"></i>240-463-2442
+            <br>
+            <i class="fa-solid fa-envelope-open-text fa-xs"></i><a href="mailto:Monika.Hammer@montgomerycountymd.gov"
+              class="email-link">Monika.Hammer@montgomerycountymd.gov
+            </a>
+            <br>
+          </p>
+        </div>
+
+        <!-- Aside 4 -->
+        <div class="aside-box">
+          <h2>Register Today!</h2>
+          <a href="https://web1.myvscloud.com/wbwsc/mdmontgomeryctywt.wsc/splash.html" target="_blank"><img
+              src="/images/activemontgomery.png" alt="Active Montgomery Logo"></a>
+          <p>
+            Visit
+            <a href="https://web1.myvscloud.com/wbwsc/mdmontgomeryctywt.wsc/splash.html"
+              target="_blank">ActiveMONTGOMERY</a>
+            to register for both Montgomery County Recreation and Montgomery
+            Parks activities and classes!
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+   <!-- Footer -->
+   <footer>
+    <div class="header-footer-container">
+      <div class="footer-left">
+        <div class="footer-links">
+          <!-- Footer Left Side Links + Contact -->
+          <a href="/project4/privacypolicy.html">Privacy Policy</a>
+        </div>
+        <p>
+          <i class="fa-solid fa-location-dot fa-lg" style="color: #ffffff"></i>
+          2425 Reedie Drive (10th Floor), Wheaton, MD 20902
+        </p>
+        <p>
+          <i class="fa-solid fa-phone fa-lg" style="color: #ffffff"></i>
+          240-777-6840
+        </p>
+        <!-- Date and Time Display -->
+        <div id="date-time-display"></div>
+      </div>
+
+      <!-- Footer Right Side Social Media -->
+      <div class="footer-right">
+        <a href="https://www.facebook.com/montgomerycountyrecreation/" target="_blank"><i
+            class="fa-brands fa-square-facebook fa-2xl" style="color: #ffffff"></i></a>
+        <a href="https://twitter.com/MoCoRec" target="_blank"><i class="fa-brands fa-square-twitter fa-2xl"
+            style="color: #ffffff"></i></a>
+        <a href="https://www.instagram.com/mocorecreation/" target="_blank"><i class="fa-brands fa-instagram fa-2xl"
+            style="color: #ffffff"></i></a>
+        <a href="https://www.flickr.com/photos/mocorec" target="_blank"><i class="fa-brands fa-flickr fa-2xl"
+            style="color: #ffffff"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/p4script.js"></script>
+
+  <!-- Google Custom Search Script -->
+  <script async src="https://cse.google.com/cse.js?cx=44de428509759439c"></script>
+</body>
+
+</html>

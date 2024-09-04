@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/p3style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <meta name="description" content="Delve into the world of web development preprocessing, exploring client-side and server-side techniques along with advanced LESS/SASS features. Enhance your CSS skills with mixins, variables, functions, and more.">
+    <meta name="keywords" content="Web Development Preprocessing, Client-Side Implementation, Server-Side Techniques, LESS CSS Preprocessor, SASS Mechanisms, CSS Mixins, Variables in CSS, CSS Functions and Operations, Nested Variables in SASS, CSS Maintainability">
+    <title>Preprocessing</title>
+</head>
+
+<!-- 
+Sass Implementation and Mechanisms Used in Project 3:
+
+1. Sass Preprocessing: 
+   - I used Visual Studio Code with the Live Sass Compiler extension to automatically compile my .scss files into .css. 
+   This setup streamlines the workflow, allowing for real-time compilation of Sass to CSS as changes are made in the .scss file.
+
+2. Variables:
+   - To maintain consistency in styling and simplify changes, I defined a set of Sass variables for colors, font stacks, and breakpoints. 
+   For example, $primary-color, $secondary-color, etc., are used throughout the stylesheet to ensure uniformity and ease of updates.
+
+3. Nesting:
+   - Sass's nesting capability is utilized for cleaner and more organized code. For example, within the 'nav' selector, 
+   I nested the styling for '.hamburger' and '.nav-links', allowing for a more structured and readable format.
+
+4. Media Queries:
+   - To achieve a responsive design, I used Sass media queries. Breakpoints were defined as variables ($tablet, $phone) and used 
+   within the stylesheet to adjust styles for different screen sizes. This approach simplifies the management of responsive designs.
+-->
+
+
+<body class="project3-body">
+
+    <header>
+        <h1>CMST 386 - Project 3</h1>
+    </header>
+
+    <nav>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/project3/project3.html">Project 3</a>
+        </div>
+    </nav>
+
+
+    <div class="breadcrumbs">
+        <a href="/index.html">Home</a>
+        <span> > </span>
+        <a href="/project3/project3.html">Project 3</a>
+        <span> > </span>
+        <span>Preprocessing</span>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="content-area">
+                <section>
+                    <h2>Preprocessing</h2>
+                    <article>
+                        <h3>Implementation of Preprocessing (Client-Side vs. Server-Side)</h3>
+                        <p>
+                            In web development, preprocessing is a critical step in handling data both before it's sent
+                            from the client (such as a web browser) to the server, and before the server processes this
+                            data.
+                        </p>
+
+                        <h4>Client-Side Preprocessing</h4>
+                        <p>
+                            This occurs within the user's browser. For example, in a web form, preprocessing can involve
+                            validating and formatting user input before it's sent to the server. Using JavaScript, you
+                            can create functions that check the data's format (like ensuring an email is valid) and
+                            clean it up (like trimming extra spaces) as soon as the user submits the form. This step can
+                            reduce server load and provide instant feedback to users, enhancing their experience.
+                        </p>
+
+                        <h4>Server-Side Preprocessing</h4>
+                        <p>
+                            After data arrives at the server from the client, it often requires additional processing.
+                            This can involve tasks like sanitizing the data to prevent security issues, or transforming
+                            it into a format suitable for database storage. For example, in a Node.js environment,
+                            middleware can be used for this purpose. Middleware functions inspect and adjust the
+                            incoming data before it reaches the main server logic, preparing it for safe and effective
+                            processing.
+                        </p>
+
+                        <h4>Integrating Client-Side & Server-Side</h4>
+                        <p>
+                            Effective web applications typically utilize both client-side and server-side preprocessing.
+                            The client-side handles immediate tasks like input validation, enhancing responsiveness and
+                            user experience. The server-side deals with more complex tasks like data sanitization and
+                            transformation, ensuring secure and efficient back-end processing. This division of tasks
+                            allows for more optimized and secure web applications.
+                        </p>
+                    </article>
+                </section>
+            </div>
+
+            <div class="content-area">
+                <section>
+                    <h3>The Mechanisms of Sass & LESS</h3>
+                    <article>
+                        <h4>Differences Between Sass & LESS:</h4>
+                        <p>
+                            Sass (Syntactically Awesome Stylesheets) and LESS (Leaner Style Sheets) are both CSS
+                            pre-processors, which are tools that extend the default capabilities of CSS. They provide
+                            mechanisms that allow for more efficient, maintainable, and scalable stylesheet writing.
+                            Despite their different syntaxes and features, both Sass and LESS aim to make CSS coding
+                            more powerful and easier to work with.
+                        </p>
+
+                        <h4>Sass</h4>
+                        <p>
+                            One of the main features of Sass is the use of variables, which allows you to store values
+                            like colors, fonts, or any CSS value and reuse them throughout the stylesheet. This makes it
+                            easy to implement theme changes or adjustments. Sass also supports nesting, where you can
+                            nest CSS selectors within one another, mirroring the HTML structure. This makes the code
+                            cleaner and more readable. Other features include mixins, which are reusable blocks of code,
+                            and the ability to define functions and control directives (like loops and conditionals) for
+                            more dynamic and complex stylesheets.
+                        </p>
+
+                        <h4>LESS</h4>
+                        <p>
+                            LESS, similar to Sass, extends CSS with dynamic behavior such as variables, mixins,
+                            operations, and functions. LESS allows real-time compilation via less.js in the browser,
+                            which can be useful for development purposes. Variables in LESS are used in a similar way to
+                            Sass, enabling the easy customization and management of styles. Nesting in LESS is also akin
+                            to Sass, allowing for a more organized and hierarchical structure in stylesheets. One unique
+                            aspect of LESS is its operation feature, which lets you perform mathematical operations
+                            right within the CSS.
+                        </p>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <a href="#top" class="back-to-top">Back to Top</a>
+
+    <footer>
+        &copy; 2023 Lidiya Grigoryeva
+    </footer>
+
+    <script src="/js/p3script.js"></script>
+
+</body>
+
+</html>

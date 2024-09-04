@@ -1,0 +1,957 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-footer-container {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.home-page-header {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+header {
+  background: #0065bd;
+  color: white;
+  width: 100%;
+  margin-bottom: 20px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+header nav .logo {
+  margin-right: 2rem;
+}
+header nav .logo a {
+  display: flex;
+  align-items: center;
+}
+header nav .logo a .logo-img {
+  max-width: 200px;
+  height: auto;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+header nav ul li {
+  padding: 0 1rem;
+}
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.nav-item {
+  position: relative;
+}
+.nav-item .dropdown-toggle {
+  cursor: pointer;
+}
+.nav-item .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #323436;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.nav-item .dropdown-menu a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.nav-item .dropdown-menu a:hover {
+  background-color: #f24b27;
+}
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+.breadcrumb {
+  padding: 0 20px;
+  background: none;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  list-style: none;
+  font-size: 0.8rem;
+}
+.breadcrumb li {
+  display: inline;
+  margin-right: 0.5rem;
+}
+.breadcrumb li:after {
+  content: "/";
+  margin-left: 0.5rem;
+}
+.breadcrumb li:last-child:after {
+  content: "";
+}
+
+.main-content {
+  background: white;
+  width: 1024px;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0 0 2rem 0;
+}
+
+.hero {
+  background: no-repeat center center;
+  background-size: cover;
+  height: 455px;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: no-repeat center center;
+  background-image: var(--next-image);
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.hero.fade::before {
+  opacity: 1;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem;
+}
+.quick-links .link-item {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0065bd;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 10px;
+  flex-basis: calc(33.3333333333% - 20px - 2rem);
+}
+.quick-links .link-item a {
+  text-decoration: none;
+  color: inherit;
+}
+.quick-links .link-item a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+.quick-links .link-item i {
+  display: block;
+  font-size: 2em;
+  margin-bottom: 0.5rem;
+}
+.quick-links .link-item:hover {
+  background-color: #004a8a;
+}
+
+.events-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.events-table th, .events-table td {
+  border: 1px solid #323436;
+  padding: 0.5rem;
+  text-align: left;
+}
+.events-table th {
+  background-color: #323436;
+  color: white;
+}
+.events-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.events {
+  padding: 0 20px;
+}
+.events .events-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.events .events-table th, .events .events-table td {
+  border: 1px solid #323436;
+  padding: 0.5rem;
+  text-align: left;
+}
+.events .events-table th {
+  background-color: #323436;
+  color: white;
+}
+.events .events-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+footer {
+  background: #323436;
+  color: white;
+  padding: 1rem;
+  width: 100%;
+}
+footer #date-time-display {
+  color: white;
+  padding-top: 10px;
+  text-align: center;
+}
+footer .header-footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1024px;
+  margin: 0 auto;
+}
+footer .header-footer-container .footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+footer .header-footer-container .footer-left .footer-links {
+  display: flex;
+}
+footer .header-footer-container .footer-left .footer-links a {
+  color: white;
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+footer .header-footer-container .footer-left p {
+  margin-bottom: 0.1rem;
+}
+footer .header-footer-container .footer-right {
+  display: flex;
+  align-items: center;
+}
+footer .header-footer-container .footer-right a {
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.aquatics-page .main-content .content-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+}
+.aquatics-page .main-content .content-layout .main-article {
+  flex: 3;
+  padding: 0 20px;
+}
+.aquatics-page .main-content .content-layout .main-article h3 {
+  margin-bottom: 0.5rem;
+}
+.aquatics-page .main-content .content-layout .main-article p {
+  margin: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+.aquatics-page .main-content .content-layout .sidebar {
+  flex: 1;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.aquatics-page .main-content .content-layout .sidebar .aside-box {
+  width: 26.5rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 1rem;
+  padding-top: 0;
+}
+.aquatics-page .main-content .content-layout .sidebar .aside-box img {
+  margin-top: 0.5rem;
+}
+.aquatics-page .main-content .content-layout .sidebar .aside-box h2 {
+  background-color: #0065bd;
+  color: white;
+  padding: 0.5rem;
+  margin: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-size: 0.9rem;
+}
+.aquatics-page .main-content .content-layout .sidebar .aside-box p,
+.aquatics-page .main-content .content-layout .sidebar .aside-box a {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: #000;
+  font-size: 0.8rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.aquatics-page .main-content .content-layout .sidebar .aside-box p i,
+.aquatics-page .main-content .content-layout .sidebar .aside-box a i {
+  margin-right: 0.5rem;
+}
+
+.camps-page .main-content .content-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+}
+.camps-page .main-content .content-layout .main-article {
+  flex: 3;
+  padding: 0 20px;
+}
+.camps-page .main-content .content-layout .main-article h3 {
+  margin-bottom: 0.5rem;
+}
+.camps-page .main-content .content-layout .main-article p {
+  margin: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+.camps-page .main-content .content-layout .sidebar {
+  flex: 1;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.camps-page .main-content .content-layout .sidebar .aside-box {
+  width: 26.5rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 1rem;
+  padding-top: 0;
+}
+.camps-page .main-content .content-layout .sidebar .aside-box img {
+  margin-top: 0.5rem;
+}
+.camps-page .main-content .content-layout .sidebar .aside-box h2 {
+  background-color: #0065bd;
+  color: white;
+  padding: 0.5rem;
+  margin: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-size: 0.9rem;
+}
+.camps-page .main-content .content-layout .sidebar .aside-box p,
+.camps-page .main-content .content-layout .sidebar .aside-box a {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: #000;
+  font-size: 0.8rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.camps-page .main-content .content-layout .sidebar .aside-box p i,
+.camps-page .main-content .content-layout .sidebar .aside-box a i {
+  margin-right: 0.5rem;
+}
+
+.classes-page .main-content .content-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+}
+.classes-page .main-content .content-layout .main-article {
+  flex: 3;
+  padding: 0 20px;
+}
+.classes-page .main-content .content-layout .main-article h3 {
+  margin-bottom: 0.5rem;
+}
+.classes-page .main-content .content-layout .main-article p {
+  margin: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+.classes-page .main-content .content-layout .sidebar {
+  flex: 1;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.classes-page .main-content .content-layout .sidebar .aside-box {
+  width: 26.5rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 1rem;
+  padding-top: 0;
+}
+.classes-page .main-content .content-layout .sidebar .aside-box img {
+  margin-top: 0.5rem;
+}
+.classes-page .main-content .content-layout .sidebar .aside-box h2 {
+  background-color: #0065bd;
+  color: white;
+  padding: 0.5rem;
+  margin: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-size: 0.9rem;
+}
+.classes-page .main-content .content-layout .sidebar .aside-box p,
+.classes-page .main-content .content-layout .sidebar .aside-box a {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: #000;
+  font-size: 0.8rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.classes-page .main-content .content-layout .sidebar .aside-box p i,
+.classes-page .main-content .content-layout .sidebar .aside-box a i {
+  margin-right: 0.5rem;
+}
+
+.facilities-page .main-content .content-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+}
+.facilities-page .main-content .content-layout .facility-section {
+  flex: 3;
+  padding: 0 20px;
+}
+.facilities-page .main-content .content-layout .facility-section .facility-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-evenly;
+}
+.facilities-page .main-content .content-layout .facility-section .facility-container .facility {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.facilities-page .main-content .content-layout .facility-section .facility-container .facility .facility-name {
+  background-color: #0065bd;
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1.2em;
+}
+.facilities-page .main-content .content-layout .facility-section .facility-container .facility img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.facilities-page .main-content .content-layout .facility-section .facility-container .facility h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.facilities-page .main-content .content-layout .facility-section .facility-container .facility .facility-info {
+  padding: 1rem;
+}
+.facilities-page .main-content .content-layout .facility-section .facility-container .facility .facility-info p {
+  margin: 0.5rem 0;
+  line-height: 1.4;
+  color: #323436;
+}
+.facilities-page .main-content .content-layout .sidebar {
+  flex: 1;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.facilities-page .main-content .content-layout .sidebar .aside-box {
+  width: 26.5rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 1rem;
+  padding-top: 0;
+}
+.facilities-page .main-content .content-layout .sidebar .aside-box img {
+  margin-top: 0.5rem;
+}
+.facilities-page .main-content .content-layout .sidebar .aside-box h2 {
+  background-color: #0065bd;
+  color: white;
+  padding: 0.5rem;
+  margin: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-size: 0.9rem;
+}
+.facilities-page .main-content .content-layout .sidebar .aside-box p,
+.facilities-page .main-content .content-layout .sidebar .aside-box a {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: #000;
+  font-size: 0.8rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.facilities-page .main-content .content-layout .sidebar .aside-box p i,
+.facilities-page .main-content .content-layout .sidebar .aside-box a i {
+  margin-right: 0.5rem;
+}
+
+.memberships-page .main-content .content-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+}
+.memberships-page .main-content .content-layout .main-article {
+  flex: 3;
+  padding: 0 20px;
+}
+.memberships-page .main-content .content-layout .main-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.memberships-page .main-content .content-layout .main-article table th,
+.memberships-page .main-content .content-layout .main-article table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+}
+.memberships-page .main-content .content-layout .main-article table th {
+  background-color: #0065bd;
+  color: white;
+}
+.memberships-page .main-content .content-layout .main-article table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.memberships-page .main-content .content-layout .sidebar {
+  flex: 1;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.memberships-page .main-content .content-layout .sidebar .aside-box {
+  width: 26.5rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 1rem;
+  padding-top: 0;
+}
+.memberships-page .main-content .content-layout .sidebar .aside-box img {
+  margin-top: 0.5rem;
+}
+.memberships-page .main-content .content-layout .sidebar .aside-box h2 {
+  background-color: #0065bd;
+  color: white;
+  padding: 0.5rem;
+  margin: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-size: 0.9rem;
+}
+.memberships-page .main-content .content-layout .sidebar .aside-box p,
+.memberships-page .main-content .content-layout .sidebar .aside-box a {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: #000;
+  font-size: 0.8rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.memberships-page .main-content .content-layout .sidebar .aside-box p i,
+.memberships-page .main-content .content-layout .sidebar .aside-box a i {
+  margin-right: 0.5rem;
+}
+
+.seniors-page .main-content .content-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+}
+.seniors-page .main-content .content-layout .main-article {
+  flex: 3;
+  padding: 0 20px;
+}
+.seniors-page .main-content .content-layout .main-article h3 {
+  margin-bottom: 0.5rem;
+}
+.seniors-page .main-content .content-layout .main-article p {
+  margin: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+.seniors-page .main-content .content-layout .sidebar {
+  flex: 1;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.seniors-page .main-content .content-layout .sidebar .aside-box {
+  width: 26.5rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 1rem;
+  padding-top: 0;
+}
+.seniors-page .main-content .content-layout .sidebar .aside-box img {
+  margin-top: 0.5rem;
+}
+.seniors-page .main-content .content-layout .sidebar .aside-box h2 {
+  background-color: #0065bd;
+  color: white;
+  padding: 0.5rem;
+  margin: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-size: 0.9rem;
+}
+.seniors-page .main-content .content-layout .sidebar .aside-box p,
+.seniors-page .main-content .content-layout .sidebar .aside-box a {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: #000;
+  font-size: 0.8rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.seniors-page .main-content .content-layout .sidebar .aside-box p i,
+.seniors-page .main-content .content-layout .sidebar .aside-box a i {
+  margin-right: 0.5rem;
+}
+
+.sports-page .main-content .content-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+}
+.sports-page .main-content .content-layout .main-article {
+  flex: 3;
+  padding: 0 20px;
+}
+.sports-page .main-content .content-layout .main-article h3 {
+  margin-bottom: 0.5rem;
+}
+.sports-page .main-content .content-layout .main-article p {
+  margin: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+.sports-page .main-content .content-layout .sidebar {
+  flex: 1;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.sports-page .main-content .content-layout .sidebar .aside-box {
+  width: 26.5rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 1rem;
+  padding-top: 0;
+}
+.sports-page .main-content .content-layout .sidebar .aside-box img {
+  margin-top: 0.5rem;
+}
+.sports-page .main-content .content-layout .sidebar .aside-box h2 {
+  background-color: #0065bd;
+  color: white;
+  padding: 0.5rem;
+  margin: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-size: 0.9rem;
+}
+.sports-page .main-content .content-layout .sidebar .aside-box p,
+.sports-page .main-content .content-layout .sidebar .aside-box a {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: #000;
+  font-size: 0.8rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.sports-page .main-content .content-layout .sidebar .aside-box p i,
+.sports-page .main-content .content-layout .sidebar .aside-box a i {
+  margin-right: 0.5rem;
+}
+
+.youth-page .main-content .content-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+}
+.youth-page .main-content .content-layout .main-article {
+  flex: 3;
+  padding: 0 20px;
+}
+.youth-page .main-content .content-layout .main-article h3 {
+  margin-bottom: 0.5rem;
+}
+.youth-page .main-content .content-layout .main-article p {
+  margin: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+.youth-page .main-content .content-layout .sidebar {
+  flex: 1;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.youth-page .main-content .content-layout .sidebar .aside-box {
+  width: 26.5rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 1rem;
+  padding-top: 0;
+}
+.youth-page .main-content .content-layout .sidebar .aside-box img {
+  margin-top: 0.5rem;
+}
+.youth-page .main-content .content-layout .sidebar .aside-box h2 {
+  background-color: #0065bd;
+  color: white;
+  padding: 0.5rem;
+  margin: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-size: 0.9rem;
+}
+.youth-page .main-content .content-layout .sidebar .aside-box p,
+.youth-page .main-content .content-layout .sidebar .aside-box a {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: #000;
+  font-size: 0.8rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.youth-page .main-content .content-layout .sidebar .aside-box p i,
+.youth-page .main-content .content-layout .sidebar .aside-box a i {
+  margin-right: 0.5rem;
+}
+
+.privacy-policy-page .main-content .content-layout {
+  padding: 0 20px;
+}
+.privacy-policy-page .main-content .content-layout .main-article h1 {
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.privacy-policy-page .main-content .content-layout .main-article p,
+.privacy-policy-page .main-content .content-layout .main-article ul,
+.privacy-policy-page .main-content .content-layout .main-article ol,
+.privacy-policy-page .main-content .content-layout .main-article li {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+.privacy-policy-page .main-content .content-layout .main-article table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.privacy-policy-page .main-content .content-layout .main-article table th,
+.privacy-policy-page .main-content .content-layout .main-article table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+}
+.privacy-policy-page .main-content .content-layout .main-article table th {
+  background-color: #0065bd;
+  color: white;
+}
+.privacy-policy-page .main-content .content-layout .main-article table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.privacy-policy-page .main-content .content-layout .main-article a {
+  color: #000000;
+}
+.privacy-policy-page .main-content .content-layout .main-article a:link, .privacy-policy-page .main-content .content-layout .main-article a:visited {
+  color: inherit;
+}
+.privacy-policy-page .main-content .content-layout .main-article a:hover {
+  color: #f24b27;
+  text-decoration: underline;
+}
+.privacy-policy-page .main-content .content-layout .main-article a:active {
+  color: #f24b27;
+}
+
+.about-page .main-content .content-layout {
+  background: white;
+  width: 1024px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.about-page .main-content .content-layout .history-section {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.about-page .main-content .content-layout .history-section h1 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.about-page .main-content .content-layout .history-section p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+.about-page .main-content .content-layout .director-profiles {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.about-page .main-content .content-layout .director-profiles .director {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.about-page .main-content .content-layout .director-profiles .director img {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+}
+.about-page .main-content .content-layout .director-profiles .director .bio {
+  flex-grow: 1;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.about-page .main-content .content-layout .director-profiles .director .bio h2 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+.about-page .main-content .content-layout .director-profiles .director .bio p {
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+.about-page .main-content .content-layout .director-profiles .director.reverse {
+  flex-direction: row-reverse;
+}
+
+.contact-page .main-content .content-layout {
+  display: flex;
+  justify-content: space-between;
+}
+.contact-page .main-content .content-layout .main-article {
+  flex: 3;
+  padding: 0 20px;
+}
+.contact-page .main-content .content-layout .main-article form {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.contact-page .main-content .content-layout .main-article form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.contact-page .main-content .content-layout .main-article form fieldset legend {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #0065bd;
+}
+.contact-page .main-content .content-layout .main-article form fieldset label {
+  display: block;
+  margin: 10px 0;
+  color: #323436;
+}
+.contact-page .main-content .content-layout .main-article form fieldset input[type=text],
+.contact-page .main-content .content-layout .main-article form fieldset textarea,
+.contact-page .main-content .content-layout .main-article form fieldset select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+.contact-page .main-content .content-layout .main-article form fieldset textarea {
+  height: 100px;
+}
+.contact-page .main-content .content-layout .main-article form fieldset input[type=submit] {
+  background-color: #f24b27;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.contact-page .main-content .content-layout .main-article form fieldset input[type=submit]:hover {
+  background-color: #d9310d;
+}
+.contact-page .main-content .content-layout .sidebar {
+  flex: 1;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.contact-page .main-content .content-layout .sidebar .aside-box {
+  width: 26.5rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 1rem;
+  padding-top: 0;
+}
+.contact-page .main-content .content-layout .sidebar .aside-box img {
+  margin-top: 0.5rem;
+}
+.contact-page .main-content .content-layout .sidebar .aside-box h2 {
+  background-color: #0065bd;
+  color: white;
+  padding: 0.5rem;
+  margin: 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-size: 0.9rem;
+}
+.contact-page .main-content .content-layout .sidebar .aside-box p,
+.contact-page .main-content .content-layout .sidebar .aside-box a {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: #000;
+  font-size: 0.8rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.contact-page .main-content .content-layout .sidebar .aside-box p i,
+.contact-page .main-content .content-layout .sidebar .aside-box a i {
+  margin-right: 0.5rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.button-container .button {
+  background-color: #f24b27;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+}
+.button-container .button i {
+  margin-right: 10px;
+}
+.button-container .button:hover {
+  background-color: #d9310d;
+}/*# sourceMappingURL=p4style.css.map */
