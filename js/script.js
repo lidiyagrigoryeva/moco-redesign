@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const heroSection = document.querySelector(".hero");
   let images = [];
-  
+
   // Function to update the date and time
   function updateDateTime() {
     const now = new Date();
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentImageIndex = 0;
   heroSection.style.backgroundImage = `url('${images[currentImageIndex].src}')`;
-  
+
   setInterval(() => {
     let nextImageIndex = (currentImageIndex + 1) % images.length;
     heroSection.style.setProperty(
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `url('${images[nextImageIndex].src}')`
     );
     heroSection.classList.add("fade");
-  
+
     heroSection.addEventListener(
       "transitionend",
       () => {
@@ -95,7 +95,4 @@ document.addEventListener("DOMContentLoaded", () => {
       { once: true }
     );
   }, 5000); // Change image every 5 sec
-  
 });
-
-
